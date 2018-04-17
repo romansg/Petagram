@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import com.romansg.petagram.biografia.BiografiaActivity;
 import com.romansg.petagram.contacto.ContactoActivity;
 import com.romansg.petagram.db.Interactor;
+import com.romansg.petagram.favoritas.MascotasFavoritasActivity;
 import com.romansg.petagram.listado.ListaMascotasFragment;
 import com.romansg.petagram.perfil.PerfilMascotaFragment;
 
@@ -45,6 +46,7 @@ public class MainPresenterImpl implements MainPresenter {
 
     @Override
     public void verMascotasFavoritas() {
-
+        Intent intent = new Intent(context, MascotasFavoritasActivity.class);
+        context.startActivity(intent);
     }
 }
