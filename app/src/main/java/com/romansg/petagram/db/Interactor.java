@@ -4,6 +4,9 @@ import android.content.ContentValues;
 import android.content.Context;
 
 import com.romansg.petagram.R;
+import com.romansg.petagram.pojo.Mascota;
+
+import java.util.ArrayList;
 
 public class Interactor {
     private Context context;
@@ -11,6 +14,7 @@ public class Interactor {
     public Interactor(Context context) {
         this.context  = context;
     }
+
     public void agregarMascotas() {
         DbHelper db = new DbHelper(context);
 
@@ -108,5 +112,28 @@ public class Interactor {
         values.put(DbHelper.TABLA_MASCOTA_NOMBRE, "Wilson");
         values.put(DbHelper.TABLA_MASCOTA_FOTO, R.drawable.wilson);
         db.agregarMascota(values);
+    }
+
+    public void darLikeMascota(Mascota mascota) {
+        DbHelper db = new DbHelper(context);
+        db.darLikeMascota(mascota.getId());
+    }
+
+    public int obtenerLikesMascota(Mascota mascota) {
+        DbHelper db = new DbHelper(context);
+
+        return db.obtenerLikesMascota(mascota.getId());
+    }
+
+    public ArrayList<Mascota> obtenerTodasLasMascotas() {
+        DbHelper db = new DbHelper(context);
+
+        return db.obtenerTodasLasMascotas();
+    }
+
+    public ArrayList<Mascota> obtenerMascotasFavoritas(int cuantas) {
+        DbHelper db = new DbHelper(context);
+
+        return db.obtenerMascotasFavoritas(cuantas);
     }
 }
