@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.romansg.petagram.pojo.Mascota;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -21,6 +22,11 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String TABLA_MASCOTA_LIKES = "likes";
 
     private Context context;
+
+    public static boolean databaseExists(Context context) {
+        File file = context.getDatabasePath(DATABASE_NAME);
+        return file.exists();
+    }
 
     public DbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -92,7 +98,11 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     public ArrayList<Mascota> obtenerTodasLasMascotas() {
-        String sqlObtenerMascotas = "SELECT * FROM " + TABLA_MASCOTA;
+        String sqlObtenerMascotas = String.format(
+                    Locale.getDefault(),
+                    "SELECT * FROM %s ORDER BY %s",
+                    TABLA_MASCOTA,
+                    TABLA_MASCOTA_NOMBRE);
 
         return obtenerMascotas(sqlObtenerMascotas);
     }

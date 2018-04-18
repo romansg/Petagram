@@ -15,6 +15,10 @@ public class Interactor {
         this.context  = context;
     }
 
+    public boolean hayDatos() {
+        return DbHelper.databaseExists(context);
+    }
+
     public void agregarMascotas() {
         DbHelper db = new DbHelper(context);
 

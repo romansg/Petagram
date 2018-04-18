@@ -23,6 +23,12 @@ public class MainPresenterImpl implements MainPresenter {
                 new Fragment[]{new ListaMascotasFragment(), new PerfilMascotaFragment()},
                 new String[]{"Mascotas", "Perfil"}
         );
+
+        Interactor interactor = new Interactor(context);
+
+        if (!interactor.hayDatos()) {
+            agregarMuestraMascotas();
+        }
     }
 
     @Override

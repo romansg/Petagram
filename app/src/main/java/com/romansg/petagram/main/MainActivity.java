@@ -1,7 +1,5 @@
 package com.romansg.petagram.main;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -10,7 +8,6 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.romansg.petagram.R;
 
@@ -31,24 +28,6 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
         setSupportActionBar(toolbar);
         presenter = new MainPresenterImpl(this, this);
-
-        /*
-            En esta aplicación trabajaremos con datos de muestra que insertaremos la primera vez que
-            se ejecute. Para determinar si es la primera ejecución guardaremos un valor en las
-            preferencias.
-         */
-        SharedPreferences preferences = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
-        boolean firstRun = preferences.getBoolean("firstRun", true);
-
-        if (firstRun) {
-            presenter.agregarMuestraMascotas();
-
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putBoolean("firstRun", false);
-            editor.commit();
-
-            Toast.makeText(this, "Primera ejecución", Toast.LENGTH_SHORT).show();
-        }
     }
 
     @Override
