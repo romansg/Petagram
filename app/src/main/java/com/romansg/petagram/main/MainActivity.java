@@ -74,6 +74,10 @@ public class MainActivity extends AppCompatActivity implements MainView {
                 presenter.verBiografia();
                 break;
 
+            case R.id.mReiniciar:
+                presenter.reiniciarLikesMascotas();
+                break;
+
             case R.id.mFavoritas:
                 presenter.verMascotasFavoritas();
                 break;

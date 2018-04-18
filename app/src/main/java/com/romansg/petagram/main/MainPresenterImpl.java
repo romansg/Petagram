@@ -32,6 +32,12 @@ public class MainPresenterImpl implements MainPresenter {
     }
 
     @Override
+    public void reiniciarLikesMascotas() {
+        Interactor interactor = new Interactor(context);
+        interactor.reiniciarLikesMascotas();
+    }
+
+    @Override
     public void verContacto() {
         Intent intent = new Intent(context, ContactoActivity.class);
         context.startActivity(intent);

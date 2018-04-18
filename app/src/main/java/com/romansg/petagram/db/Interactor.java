@@ -136,4 +136,10 @@ public class Interactor {
 
         return db.obtenerMascotasFavoritas(cuantas);
     }
+
+    public void reiniciarLikesMascotas() {
+        DbHelper db = new DbHelper(context);
+
+        db.reiniciarLikes();
+    }
 }

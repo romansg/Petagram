@@ -128,4 +128,17 @@ public class DbHelper extends SQLiteOpenHelper {
 
         return mascotas;
     }
+
+    public void reiniciarLikes() {
+        String sqlReiniciarLikes = String.format(
+                Locale.getDefault(),
+                "UPDATE %s SET %s = 0",
+                TABLA_MASCOTA,
+                TABLA_MASCOTA_LIKES);
+
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL(sqlReiniciarLikes);
+
+        db.close();
+    }
 }

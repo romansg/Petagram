@@ -20,4 +20,5 @@
     <string name="ratings_descr">Botón para dar \"like\" a la mascota</string>
     <string name="dummy_pet_name">Petty</string>
     <string name="dummy_pet_likes">5</string>
+    <string name="menu_reiniciar">Reiniciar \"likes\"</string>
 </resources>

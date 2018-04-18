@@ -11,6 +11,10 @@
         android:orderInCategory="110"
         android:title="@string/menu_biografia" />
     <item
+        android:id="@+id/mReiniciar"
+        android:orderInCategory="115"
+        android:title="@string/menu_reiniciar" />
+    <item
         android:id="@+id/mFavoritas"
         android:icon="@drawable/star5"
         android:orderInCategory="120"
