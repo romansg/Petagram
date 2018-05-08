@@ -15,7 +15,7 @@ Proyecto final del tercer curso de la especialidad en **Desarrollo de aplicacion
 
 Cada presentador se comunica con la base de datos a través de un interactor común. El interactor y el manejador de la base están en el paquete **db**.
 
-2. Para la base de datos se omitió el uso de una segunda tabla que sólo refleja un muy mal manejo del modelo Entidad-Relación ya que se fuerza una relación 1 a 1 a ser una relación 1 a muchos sin ninguna justificación ya que no es ilustrativo de ningún aspecto del curso. Entonces, el POJO que representa a la mascota quedó así:
+2. Para la base de datos se omitió el uso de una segunda tabla ya que es innecesaria para el conteo de "likes" y no es ilustrativa de ningún aspecto del curso. Entonces, el POJO que representa a la mascota quedó así:
 
 ```java
 public class Mascota {
